@@ -1,0 +1,56 @@
+.nav{
+    &__list {
+        display: flex;
+
+        @include md {
+            display: block;
+        }
+    }
+
+    &__item{
+        font-size: 28px;
+        &:not(:last-child){
+            margin-right: 46px;
+
+            @include md {
+                margin-right: 0;
+            }
+        }
+    }
+    &__link{
+
+        
+        &:hover{
+            @include md{
+                &::before{
+                    opacity: 0;
+                }
+            }
+        }
+       
+        &--current{
+           &::before{
+            width: 100%;
+            transition: width 0.15s;
+
+            @include md {
+                width: 0%;
+            }
+           }
+        }
+
+        @include md {
+            
+            display: inline-block;
+            padding: 10px 10%;
+            width: 100%;
+            border-bottom: 1px solid #bfbfbf;
+            font-size: 19px;
+        }
+
+    }
+    &--visible{
+        left: 0;
+        transform: left 0.3s;
+    }
+}

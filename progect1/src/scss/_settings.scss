@@ -1,0 +1,147 @@
+html{
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after{
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    font-family: "Jost-Medium", sans-serif;
+    font-weight: 500;
+    color: var(--color-dark);
+    overflow-anchor: none;
+    background-color: var(--color-white);
+    
+}
+
+img {
+    max-width: 100%;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.is_outer {
+    position: relative !important;
+    left: -9999px !important;
+}
+
+.site-container{
+    overflow: hidden;
+}
+
+.stop-scroll {
+    @include stop-scroll;  
+}
+
+.is-hidden {
+    display: none !important;
+}
+
+.for-mobile {
+    display: none;
+
+    @include mobile {
+        display: block;
+    }
+}
+
+.error {
+    border: 2px #ff4019 solid !important;
+}
+
+.visually-hidden {
+    @include visually-hidden
+}
+
+.btn-reset {
+    border: none;
+    padding: 0;
+    background: transparent;   // Сборс стилей кнопок
+    cursor: pointer;
+}
+
+.container {
+    margin: 0 auto;
+    padding: 0 30px;
+    // max-width: 1200px;
+
+    @include xs{
+        padding: 0 15px;
+    }
+}
+
+.js-focus-visible :focus:not(.focus-visible){
+    outline: none;
+}
+
+.main-link{
+    position: relative;
+    font-size: 15px;
+    color: var(--color-dark);
+
+    &--white{
+        color:var(--color-white);
+    }
+
+    &::before{
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -5px;
+        width: 0;
+        height: 2px;
+        background-color: currentColor;
+        transition: width 0.15s;
+    }
+
+    &:hover{
+        &::before{
+            width: 100%;
+            transition: width 0.15s;
+           }
+
+    }
+}
+
+.container-narrow{
+    max-width: 1385px;
+}
+
+
+.to-top{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    border-radius: 100%;
+    right: 2%;
+    bottom: 5%;
+    width: 48px;
+    height: 48px;
+    padding: 14px 18px;
+    background-color: var(--color-white);
+    box-shadow: 0px 5px 30px 0px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+    svg{
+        width: 12px;
+        height: 21px;
+        fill: #375973;
+    }
+
+    &:hover{
+        transform: rotate(360deg);
+        transition: transform 0.3s;
+    }
+}

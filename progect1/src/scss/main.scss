@@ -1,0 +1,28 @@
+@import 'vars';
+@import 'mixins';
+@import 'fonts';
+@import 'vendor';
+@import 'settings';
+
+
+
+//Header
+@import './components/header';
+@import './components/nav';
+@import './components/shop-nav';
+//Page1
+@import './components/hero';
+@import './components/banners';
+@import './components/main-products';
+@import './components/products';
+@import './components/shop-banners';
+//Page2
+@import './components/hero-catalog';
+@import './components/breadcrums';
+@import './components/catalog-filter';
+//Page3
+@import './components/card';
+@import './components/card-slider';
+//Footer
+@import './components/footer';
+
